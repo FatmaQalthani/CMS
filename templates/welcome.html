@@ -1,0 +1,26 @@
+<!-- Store this code in 'register.html' file inside the 'templates' folder -->
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> Register </title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">			
+	</head>
+	<body align=center>
+        <h1>Fatmaalqah's Application</h2>
+       <h3> Hello {{user.email}}</h3>
+       <h5>Select a Doctor</h5>
+       <table align=center>
+           <tr>
+               <th>Name</th>
+               <th>Operation</th>
+           </tr>
+           {%for doctor in doctors%}
+           <tr>
+               <td>{{doctor.name}}</td>
+               <td><a href="/select/{{doctor.name}}">Select</a></td>
+           </tr>
+           {%endfor%}
+       </table>
+	</body>
+</html>
